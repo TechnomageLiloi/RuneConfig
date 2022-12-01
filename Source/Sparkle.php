@@ -27,51 +27,51 @@ class Sparkle
     {
         if(!is_null($key))
         {
-            $this->getKey($key);
+            $this->setKey($key);
         }
 
         if(!is_null($f))
         {
-            $this->get($f);
+            $this->set($f);
         }
-    }
-
-    /**
-     * Get tool unique key.
-     *
-     * @param string $key Tool unique key.
-     */
-    public function getKey(string $key): void
-    {
-        $this->key = $key;
     }
 
     /**
      * Set tool unique key.
      *
+     * @param string $key Tool unique key.
+     */
+    public function setKey(string $key): void
+    {
+        $this->key = $key;
+    }
+
+    /**
+     * Get tool unique key.
+     *
      * @return string Tool unique key.
      */
-    public function setKey(): string
+    public function getKey(): string
     {
         return $this->key;
     }
 
     /**
-     * Get tool lazy function.
+     * Set tool lazy function.
      *
      * @param callable $f Lazy function
      */
-    public function get(callable $f): void
+    public function set(callable $f): void
     {
         $this->f = $f;
     }
 
     /**
-     * Set tool lazy function.
+     * Get tool lazy function.
      *
      * @return callable Lazy function.
      */
-    public function set(): callable
+    public function get(): callable
     {
         return $this->f;
     }
