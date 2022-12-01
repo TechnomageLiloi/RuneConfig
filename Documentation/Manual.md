@@ -11,7 +11,8 @@ This library is for management configurations, utilities, tools, modules, etc.
 Sure. For example, we define Mysql database:
 
 ```
-...::set('db', function()
+...::add(:Sparkle);
+...::add('db', function()
 {
     return \mysqli_connect(
         'host',
@@ -37,7 +38,8 @@ Sure:
 ```
 
 ```
-...::set('db', function(array $parameners) {...
+...::add(:Sparkle);
+...::add('db', function(array $parameners) {...
 ```
 
 ## Can we see interface?
@@ -59,7 +61,8 @@ Sure.
 
 |Type|Name|Parameters|Result|Description|
 |---|---|---|---|---|
-|method|set|:Sparkle|void|Set sparkle to pensieve|
+|method|add|:Sparkle|void|Set defined sparkle to pensieve|
+|method|add|key:string f:callable|void|Set undefined sparkle to pensieve|
 |method|get|-|Sparkle|Get sparkle from pensieve|
 |method|remove|key:string|bool|Remove sparkle from pensieve|
 |method|removeAdd|-|bool|Remove all sparkles from pensieve|
