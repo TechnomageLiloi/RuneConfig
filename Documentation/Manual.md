@@ -55,7 +55,7 @@ Sure.
 |method|setKey|key:string|string|Set tool unique key|
 |method|get|-|string|Get tool lazy function|
 |method|set|key:string|string|Set tool lazy function|
-|method|exec|[parameters:array]|-|Execute lazy function|
+|method|execute|[parameters:array]|-|Execute lazy function|
 
 **Pensieve interface:**
 

@@ -75,4 +75,13 @@ class Sparkle
     {
         return $this->f;
     }
+
+    /**
+     * @return mixed
+     */
+    public function execute()
+    {
+        $call = $this->f;
+        return $call();
+    }
 }

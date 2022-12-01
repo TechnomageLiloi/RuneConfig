@@ -38,4 +38,22 @@ class SparkleTest extends TestCase
         $this->assertEquals($key, $pool->getKey());
         $this->assertEquals($f, $pool->get());
     }
+
+    /**
+     * Check get/set methods.
+     */
+    public function testExecute(): void
+    {
+        $key = 'test';
+        $result = 'qwerty';
+
+        $f = function () use ($result) {
+            return $result;
+        };
+        $pool = new Sparkle();
+        $pool->set($f);
+        $pool->setKey($key);
+
+        $this->assertEquals($result, $pool->execute());
+    }
 }
