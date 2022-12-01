@@ -39,3 +39,16 @@ Sure:
 ```
 ...::add('db', function(array $parameners)
 ```
+
+## Can we see interface?
+
+Sure.
+
+Manager interface:
+
+|Type|Name|Parameters|Result|Description|
+|---|---|---|---|---|
+|method|add|key:string f:callable|void|Add config to key|
+|method|remove|key:string|bool|Remove config according to key|
+|method|get|key:string|callable|Get config according to key|
+|method|all|-|array|Get all configs|
