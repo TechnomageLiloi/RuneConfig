@@ -11,7 +11,7 @@ This library is for management configurations, utilities, tools, modules, etc.
 Sure. For example, we define Mysql database:
 
 ```
-...::add('db', function()
+...::set('db', function()
 {
     return \mysqli_connect(
         'host',
@@ -25,7 +25,7 @@ Sure. For example, we define Mysql database:
 Then, if you needed, you may lazy call this function and get access to database connection:
 
 ```
-...::get('db'); // get mysql connection
+...::exec('db'); // get mysql connection
 ```
 
 ## Can some parameters be transmitted to define function?
@@ -33,11 +33,11 @@ Then, if you needed, you may lazy call this function and get access to database 
 Sure:
 
 ```
-...::get('db', $parameters); // get mysql connection
+...::exec('db', $parameters); // get mysql connection
 ```
 
 ```
-...::add('db', function(array $parameners)
+...::set('db', function(array $parameners) {...
 ```
 
 ## Can we see interface?
@@ -53,12 +53,14 @@ Sure.
 |method|setKey|key:string|string|Set tool unique key|
 |method|get|-|string|Get tool lazy function|
 |method|set|key:string|string|Set tool lazy function|
-|method|execute|-|-|Execute lazy function|
+|method|exec|[parameters:array]|-|Execute lazy function|
 
 **Pensieve interface:**
 
 |Type|Name|Parameters|Result|Description|
 |---|---|---|---|---|
-|method|add|:Sparkle|void|Add sparkle to pensieve|
+|method|set|:Sparkle|void|Set sparkle to pensieve|
+|method|get|-|Sparkle|Get sparkle from pensieve|
 |method|remove|key:string|bool|Remove sparkle from pensieve|
-|method|get|key:string|mixed|Get sparkle's execute result by key|
+|method|removeAdd|-|bool|Remove all sparkles from pensieve|
+|method|exec|key:string [parameters:array]|mixed|Get sparkle's execute result by key|
