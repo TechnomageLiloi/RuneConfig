@@ -44,11 +44,21 @@ Sure:
 
 Sure.
 
-**Pool interface:**
+**Sparkle interface:**
 
 |Type|Name|Parameters|Result|Description|
 |---|---|---|---|---|
-|method|add|key:string f:callable|void|Add config to key|
-|method|remove|key:string|bool|Remove config according to key|
-|method|get|key:string|callable|Get config according to key|
-|method|all|-|array|Get all configs|
+|constructor|-|key:string f:callable|Add configuration unique key and lazy function to sparkle manager|
+|method|getKey|-|string|Get tool unique key|
+|method|setKey|key:string|string|Set tool unique key|
+|method|get|-|string|Get tool lazy function|
+|method|set|key:string|string|Set tool lazy function|
+|method|execute|-|-|Execute lazy function|
+
+**Pensieve interface:**
+
+|Type|Name|Parameters|Result|Description|
+|---|---|---|---|---|
+|method|add|:Sparkle|void|Add sparkle to pensieve|
+|method|remove|key:string|bool|Remove sparkle from pensieve|
+|method|get|key:string|mixed|Get sparkle's execute result by key|

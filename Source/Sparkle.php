@@ -2,7 +2,7 @@
 
 namespace Liloi\Config;
 
-class Pool
+class Sparkle
 {
 
 }
