@@ -44,7 +44,7 @@ Sure:
 
 Sure.
 
-Manager interface:
+**Pool interface:**
 
 |Type|Name|Parameters|Result|Description|
 |---|---|---|---|---|
