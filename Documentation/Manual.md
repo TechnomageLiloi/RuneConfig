@@ -27,3 +27,15 @@ Then, if you needed, you may lazy call this function and get access to database 
 ```
 ...::get('db'); // get mysql connection
 ```
+
+## Can some parameters be transmitted to define function?
+
+Sure:
+
+```
+...::get('db', $parameters); // get mysql connection
+```
+
+```
+...::add('db', function(array $parameners)
+```
