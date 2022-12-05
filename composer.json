@@ -1,0 +1,21 @@
+{
+  "name": "anton-moskalenko/rune-pensieve",
+  "license": "BSD",
+  "description": "Config management (can be used as rune module)",
+  "require": {
+    "php": "^7.1 || ^8.0",
+    "anton-moskalenko/php-tools": "dev-main",
+    "anton-moskalenko/judex": "dev-master"
+  },
+  "type": "library",
+  "keywords": [
+    "config management",
+    "rune module"
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Liloi\\Pensieve\\": "Source"
+    }
+  }
+}
