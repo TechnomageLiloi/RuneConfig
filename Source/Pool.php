@@ -4,13 +4,17 @@ namespace Liloi\Pensieve;
 
 class Pool
 {
+    private static array $link = [];
+
     public static function get(string $key)
     {
-        throw new \Exception('Not implemented exception.');
+        $sparkle = self::$link[$key];
+        $f = $sparkle->get();
+        return $f();
     }
 
     public static function set(Sparkle $sparkle): void
     {
-        throw new \Exception('Not implemented exception.');
+        self::$link[$sparkle->getKey()] = $sparkle;
     }
 }
