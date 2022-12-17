@@ -1,5 +1,5 @@
 {
-  "name": "anton-moskalenko/rune-pensieve",
+  "name": "anton-moskalenko/rune-config",
   "license": "BSD-3-Clause",
   "description": "Config management (can be used as rune module)",
   "require": {
@@ -15,7 +15,7 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "Liloi\\Pensieve\\": "Source"
+      "Liloi\\Config\\": "Source"
     }
   }
 }

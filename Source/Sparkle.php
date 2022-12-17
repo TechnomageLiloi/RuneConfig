@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Pensieve;
+namespace Liloi\Config;
 
 /**
  * @package Liloi\Config
