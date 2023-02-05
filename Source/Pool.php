@@ -4,17 +4,71 @@ namespace Liloi\Config;
 
 class Pool
 {
-    private static array $link = [];
+    /**
+     * Configuration pool instance.
+     *
+     * @var self|null
+     */
+    static private ?self $singleton = null;
 
-    public static function get(string $key)
+    /**
+     * Configuration pool instance.
+     *
+     * @return static
+     */
+    public static function getSingleton(): self
     {
-        $sparkle = self::$link[$key];
+        if(is_null(self::$singleton))
+        {
+            self::$singleton = new self();
+        }
+
+        return self::$singleton;
+    }
+
+    /**
+     * Configuration pool constructor.
+     */
+    private function __construct()
+    {
+    }
+
+    /**
+     * List of configuration sparkles.
+     *
+     * @var array
+     */
+    private array $link = [];
+
+    /**
+     * Get configuration sparkle.
+     *
+     * @param string $key
+     */
+    public function get(string $key)
+    {
+        $sparkle = $this->link[$key];
         $f = $sparkle->get();
         return $f();
     }
 
-    public static function set(Sparkle $sparkle): void
+    /**
+     * Set configuration sparkle.
+     *
+     * @param Sparkle $sparkle
+     */
+    public function set(Sparkle $sparkle): void
     {
-        self::$link[$sparkle->getKey()] = $sparkle;
+        $this->link[$sparkle->getKey()] = $sparkle;
+    }
+
+    /**
+     * Remove configuration sparkle.
+     *
+     * @param string $key
+     */
+    public function remove(string $key): void
+    {
+        unset($this->link[$key]);
     }
 }

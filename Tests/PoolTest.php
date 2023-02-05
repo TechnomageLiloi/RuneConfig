@@ -16,7 +16,8 @@ class PoolTest extends TestCase
      */
     public function test(): void
     {
-        Pool::set(new Sparkle('test', function (){return '1';}));
-        $this->assertEquals(1, Pool::get('test'));
+        $singleton = Pool::getSingleton();
+        $singleton->set(new Sparkle('test', function (){return '1';}));
+        $this->assertEquals(1, $singleton->get('test'));
     }
 }
