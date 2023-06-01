@@ -1,10 +1,10 @@
 {
-  "name": "anton-moskalenko/rune-config",
+  "name": "technomage-liloi/rune-config",
   "license": "BSD-3-Clause",
   "description": "Config management (can be used as rune module)",
   "require": {
     "php": "^7.1 || ^8.0",
-    "anton-moskalenko/judex": "dev-master"
+    "technomage-liloi/judex": "dev-main"
   },
   "type": "library",
   "keywords": [
